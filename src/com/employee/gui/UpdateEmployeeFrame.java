@@ -118,7 +118,7 @@ public class UpdateEmployeeFrame extends JFrame {
         lblDept.setBounds(40, 80, 120, 25);
         formCard.add(lblDept);
 
-        String[] depts = {"IT", "HR", "Finance", "Sales", "Marketing", "Operations", "R&D", "Support"};
+        String[] depts = { "IT", "HR", "Finance", "Sales", "Marketing", "Operations", "R&D", "Support" };
         comboDept = new JComboBox<>(depts);
         comboDept.setFont(Constants.FONT_FIELD);
         comboDept.setBounds(170, 80, 170, 30);
@@ -130,13 +130,13 @@ public class UpdateEmployeeFrame extends JFrame {
         formCard.add(lblDesignation);
 
         String[] designations = {
-            "Intern", "Software Engineer Intern", "Software Engineer", "Senior Developer",
-            "Tech Lead", "QA Engineer", "DevOps Engineer", "UI/UX Designer",
-            "Product Manager", "Project Manager", "Director of Engineering", "Vice President (VP)",
-            "HR Intern", "HR Specialist", "HR Manager", "Financial Intern",
-            "Financial Analyst", "Accountant", "Sales Representative", "Sales Executive",
-            "Sales Manager", "Marketing Intern", "Marketing Executive", "Operations Associate",
-            "Operations Lead", "Customer Support Executive", "Tech Support Engineer"
+                "Intern", "Software Engineer Intern", "Software Engineer", "Senior Developer",
+                "Tech Lead", "QA Engineer", "DevOps Engineer", "UI/UX Designer",
+                "Product Manager", "Project Manager", "Director of Engineering", "Vice President (VP)",
+                "HR Intern", "HR Specialist", "HR Manager", "Financial Intern",
+                "Financial Analyst", "Accountant", "Sales Representative", "Sales Executive",
+                "Sales Manager", "Marketing Intern", "Marketing Executive", "Operations Associate",
+                "Operations Lead", "Customer Support Executive", "Tech Support Engineer"
         };
         comboDesignation = new JComboBox<>(designations);
         comboDesignation.setFont(Constants.FONT_FIELD);
@@ -179,7 +179,7 @@ public class UpdateEmployeeFrame extends JFrame {
         lblGender.setBounds(380, 130, 130, 25);
         formCard.add(lblGender);
 
-        String[] genders = {"Male", "Female", "Other"};
+        String[] genders = { "Male", "Female", "Other" };
         comboGender = new JComboBox<>(genders);
         comboGender.setFont(Constants.FONT_FIELD);
         comboGender.setBounds(520, 130, 160, 30);
@@ -261,8 +261,9 @@ public class UpdateEmployeeFrame extends JFrame {
 
             // 1. Validation
             if (ValidationUtil.isEmpty(name) || ValidationUtil.isEmpty(designation)
-                || ValidationUtil.isEmpty(salaryStr) || ValidationUtil.isEmpty(phone) || ValidationUtil.isEmpty(email)
-                || ValidationUtil.isEmpty(dojStr) || ValidationUtil.isEmpty(address)) {
+                    || ValidationUtil.isEmpty(salaryStr) || ValidationUtil.isEmpty(phone)
+                    || ValidationUtil.isEmpty(email)
+                    || ValidationUtil.isEmpty(dojStr) || ValidationUtil.isEmpty(address)) {
                 DialogUtil.showError(this, "All fields are required.");
                 return;
             }
@@ -297,7 +298,8 @@ public class UpdateEmployeeFrame extends JFrame {
                 Date dateOfJoining = DateUtil.parseDate(dojStr);
 
                 // Create Employee object
-                Employee updatedEmp = new Employee(id, name, dept, designation, salary, phone, email, gender, address, dateOfJoining);
+                Employee updatedEmp = new Employee(id, name, dept, designation, salary, phone, email, gender, address,
+                        dateOfJoining);
 
                 // Update in MySQL
                 boolean isUpdated = employeeDAO.updateEmployee(updatedEmp);
