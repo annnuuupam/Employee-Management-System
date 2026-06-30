@@ -1,0 +1,15 @@
+# Java compiled classes
+bin/
+classes/
+*.class
+
+# Configurations (Local credentials)
+db.properties
+
+# Temporary logs & files
+*.log
+java_files.txt
+.metadata/
+
+# Eclipse local project settings
+.settings/

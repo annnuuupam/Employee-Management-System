@@ -1,0 +1,6 @@
+# Database configuration parameters (Example Template)
+# Copy this file to 'db.properties' and update the values with your local settings.
+db.url=jdbc:mysql://localhost:3306/employee_db?useSSL=false&allowPublicKeyRetrieval=true
+db.username=your_mysql_username
+db.password=your_mysql_password
+db.driver=com.mysql.cj.jdbc.Driver
