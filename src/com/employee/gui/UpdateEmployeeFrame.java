@@ -209,21 +209,21 @@ public class UpdateEmployeeFrame extends JFrame {
         addressScroll.setBounds(520, 230, 160, 110);
         formCard.add(addressScroll);
 
-        // Action Buttons inside Form Card
+        // Action Buttons outside Form Card
         JButton btnUpdate = new JButton("Update");
         UIUtil.styleButton(btnUpdate, Constants.COLOR_BUTTON_SUCCESS, Color.WHITE);
-        btnUpdate.setBounds(180, 330, 110, 40);
-        formCard.add(btnUpdate);
+        btnUpdate.setBounds(200, 560, 110, 40);
+        contentPane.add(btnUpdate);
 
         JButton btnReset = new JButton("Reset");
         UIUtil.styleButton(btnReset, Constants.COLOR_BUTTON_SECONDARY, Color.WHITE);
-        btnReset.setBounds(310, 330, 110, 40);
-        formCard.add(btnReset);
+        btnReset.setBounds(345, 560, 110, 40);
+        contentPane.add(btnReset);
 
         JButton btnBack = new JButton("Back");
         UIUtil.styleButton(btnBack, Constants.COLOR_PRIMARY, Color.WHITE);
-        btnBack.setBounds(440, 330, 110, 40);
-        formCard.add(btnBack);
+        btnBack.setBounds(490, 560, 110, 40);
+        contentPane.add(btnBack);
 
         // Enable / Disable initially until record is searched
         setFormEnabled(false);
